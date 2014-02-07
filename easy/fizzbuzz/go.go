@@ -10,10 +10,6 @@ import (
 
 func fizzBuzz(line string) {
 	def := strings.Split(line, " ")
-	if 3 != len(def) {
-		fmt.Printf("Error parsing definition: %v\n", def)
-		os.Exit(1)
-	}
 
 	fizz, _ := strconv.Atoi(def[0])
 	buzz, _ := strconv.Atoi(def[1])
@@ -39,16 +35,7 @@ func fizzBuzz(line string) {
 }
 
 func main() {
-	if 2 != len(os.Args) {
-		fmt.Println("Input file missing!")
-		os.Exit(1)
-	}
-
-	file, oErr := os.Open(os.Args[1])
-	if oErr != nil {
-		fmt.Printf("Error opening file: %v\n", oErr)
-		os.Exit(1)
-	}
+	file, _ := os.Open(os.Args[1])
 
 	defer file.Close()
 

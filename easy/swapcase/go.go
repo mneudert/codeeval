@@ -7,16 +7,7 @@ import (
 )
 
 func main() {
-	if 2 != len(os.Args) {
-		fmt.Println("Input file missing!")
-		os.Exit(1)
-	}
-
-	file, oErr := os.Open(os.Args[1])
-	if oErr != nil {
-		fmt.Printf("Error opening file: %v\n", oErr)
-		os.Exit(1)
-	}
+	file, _ := os.Open(os.Args[1])
 
 	defer file.Close()
 
