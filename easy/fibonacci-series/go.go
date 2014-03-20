@@ -13,11 +13,11 @@ var fibs = map[int]int{
 }
 
 func fibonacci(fib int) int {
-	if _, exists := fibs[fib]; exists {
-		return fibs[fib]
+	if _, exists := fibs[fib]; !exists {
+		fibs[fib] = fibonacci(fib-1) + fibonacci(fib-2)
 	}
 
-	return fibonacci(fib-1) + fibonacci(fib-2)
+	return fibs[fib]
 }
 
 func main() {
