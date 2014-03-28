@@ -5,6 +5,6 @@ for line in io.lines(arg[1]) do
   if nil == char_pos then
     io.write('-1\n')
   else
-    io.write((sentence:len() - char_pos).. '\n')
+    io.write((sentence:len() - char_pos), '\n')
   end
 end

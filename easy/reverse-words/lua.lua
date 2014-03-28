@@ -9,9 +9,9 @@ for line in io.lines(arg[1]) do
 
   if index > 1 then
     for i = index, 2, -1 do
-      io.write(words[i] .. ' ')
+      io.write(words[i], ' ')
     end
   end
 
-  io.write(words[1] .. '\n')
+  io.write(words[1], '\n')
 end
