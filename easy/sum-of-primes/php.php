@@ -17,7 +17,7 @@ while (1000 > count($primes)) {
         $primes[] = $num;
     }
 
-    $num++;
+    $num += 2;
 }
 
 echo array_sum($primes) . PHP_EOL;
