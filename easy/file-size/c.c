@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <sys/stat.h>
 
 int main (int argc, char *argv[]) {
     struct stat st;
 
     stat(argv[1], &st);
-    printf("%u\n", st.st_size);
+    printf("%jd\n", (intmax_t) st.st_size);
 
     return 0;
 }
